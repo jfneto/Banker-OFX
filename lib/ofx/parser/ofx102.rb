@@ -106,7 +106,8 @@ module OFX
       end
 
       def build_amount(transaction)
-        BigDecimal.new(transaction.search("trnamt").inner_text)
+        BigDecimal(transaction.search("trnamt").inner_text)
+
       end
 
       def build_date(date)
